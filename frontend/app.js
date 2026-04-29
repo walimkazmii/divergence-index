@@ -1,5 +1,3 @@
-import os
-
 let chart = null;
 const API = "";
 
