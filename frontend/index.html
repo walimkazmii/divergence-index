@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Divergence Index</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="header-left">
+            <div class="logo">TDI</div>
+            <div class="header-text">
+                <h1>The Divergence Index</h1>
+                <p>Where news conflict reveals market blind spots</p>
+            </div>
+        </div>
+        <div class="header-tag">LIVE</div>
+    </div>
+</header>
+
+<main>
+
+    <div class="controls">
+        <div class="select-wrap">
+            <span class="select-label">COMPANY</span>
+            <select id="company-select">
+                <option>Loading...</option>
+            </select>
+        </div>
+        <button id="analyze-btn">Analyze</button>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <div class="card-label">News Disagreement Index</div>
+            <div class="card-value" id="ndi-score">—</div>
+            <div class="card-sub" id="ndi-level">awaiting input</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Mean Sentiment</div>
+            <div class="card-value" id="mean-sentiment">—</div>
+            <div class="card-sub">across all outlets</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Outlets Tracked</div>
+            <div class="card-value" id="outlet-count">—</div>
+            <div class="card-sub">news sources</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">
+            <div class="section-title">NDI Over Time</div>
+            <div class="section-sub">Disagreement score vs mean sentiment</div>
+        </div>
+        <div class="chart-container">
+            <canvas id="ndi-chart"></canvas>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">
+            <div class="section-title">7-Day Price Prediction</div>
+            <div class="section-sub">Signal generated from NDI, sentiment and price trajectory</div>
+        </div>
+        <div id="prediction-box" class="prediction-box">
+            <p class="empty">Select a company and click Analyze</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">
+            <div class="section-title">Outlet Sentiment Breakdown</div>
+            <div class="section-sub">Individual scores by source</div>
+        </div>
+        <div id="outlet-breakdown"></div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">
+            <div class="section-title">Related Prediction Markets</div>
+            <div class="section-sub">Live odds from Polymarket and Metaculus</div>
+        </div>
+        <div id="markets-list">
+            <p class="empty">Select a company and click Analyze</p>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <span>The Divergence Index</span>
+    <span>Powered by NewsAPI, Polymarket, Metaculus, yfinance</span>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
